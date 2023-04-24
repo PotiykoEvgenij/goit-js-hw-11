@@ -1,9 +1,8 @@
 import '../css/styles.css';
 import Notiflix from 'notiflix';
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
 import { fetchImages } from './fetchImg';
 import { renderGallery, clearGallery } from './renderGallery';
+
 
 
 Notiflix.Notify.init({
@@ -14,8 +13,6 @@ Notiflix.Notify.init({
   opacity: 0.9,
   timeout: 3000,
 });
-
-// API_KEY = "35640714-89aec83ac50fbde9100978e6e";
 
 const form = document.querySelector('#search-form');
 const gallery = document.querySelector('.gallery');
@@ -65,7 +62,7 @@ async function handleLoadMore() {
     }
 };
 
-const lightbox = new SimpleLightbox(".gallery__link", {
+const lightbox = new SimpleLightbox(".gallery a", {
     captionsData: "alt",
     captionDelay: 250,
     navText: ['←', '→'],
