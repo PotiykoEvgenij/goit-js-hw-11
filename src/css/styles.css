@@ -46,7 +46,37 @@ button:hover, button:focus {
     background-color:darkturquoise;
 }
 
+.hidden-button {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.load-more{
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blue;
+    font: inherit;
+    color: white;
+    border-radius: 20px;
+    transition: background-color var(--animation-duration) var(--timing-function);
+}
+
 .search-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,6 +92,7 @@ button:hover, button:focus {
     justify-content: center;
     padding: 0;
     list-style: none;
+    margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
 }

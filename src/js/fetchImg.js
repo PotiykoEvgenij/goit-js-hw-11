@@ -17,8 +17,8 @@ export const fetchImages = async (searchQuery, page) => {
             },
         });
         // console.log(hits);
-        const hits = data.hits;
-        return hits;
+        const { hits, totalHits } = data;
+        return { hits, totalHits };
         // const images = data.hits.map(
         //     ({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => ({
         //         webformatURL,
