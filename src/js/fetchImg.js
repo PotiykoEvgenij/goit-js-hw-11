@@ -16,23 +16,9 @@ export const fetchImages = async (searchQuery, page) => {
                 page,
             },
         });
-        // console.log(hits);
         const { hits, totalHits } = data;
         return { hits, totalHits };
-        // const images = data.hits.map(
-        //     ({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => ({
-        //         webformatURL,
-        //         largeImageURL,
-        //         tags,
-        //         likes,
-        //         views,
-        //         comments,
-        //         downloads,
-        //     }),
-        // );
-        // return images;
     } catch (error) {
-        // console.log('Error on fetching: ', error);
         throw error;
     }
 };
