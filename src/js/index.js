@@ -49,14 +49,17 @@ async function handleFormSubmit(event) {
 };
 
 async function handleLoadMore() {
+    loadMoreBtn.classList.add('hidden-button');
     currentPage++;
     try {
         const { hits, totalHits } = await fetchImages(searchQuery, currentPage);
         if (totalHits < currentPage * 40 ) {
             Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.");
             loadMoreBtn.classList.add('hidden-button');
+            return;
         }
         renderGallery(hits);
+        loadMoreBtn.classList.remove('hidden-button');
     } catch (error) {
         console.error(error);
     }
