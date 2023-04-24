@@ -15,15 +15,6 @@ Notiflix.Notify.init({
   timeout: 3000,
 });
 
-const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-    navText: ['←', '→'],
-    overlayOpacity: 0.9,
-    animationSpeed: 200,
-    doubleTapZoom: 1.5,
-});
-
 // API_KEY = "35640714-89aec83ac50fbde9100978e6e";
 
 const form = document.querySelector('#search-form');
@@ -74,3 +65,11 @@ async function handleLoadMore() {
     }
 };
 
+const lightbox = new SimpleLightbox(".gallery__link", {
+    captionsData: "alt",
+    captionDelay: 250,
+    navText: ['←', '→'],
+    overlayOpacity: 0.9,
+    animationSpeed: 200,
+    doubleTapZoom: 1.5,
+});
