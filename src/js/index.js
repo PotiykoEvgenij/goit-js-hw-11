@@ -15,7 +15,7 @@ Notiflix.Notify.init({
   timeout: 3000,
 });
 
-API_KEY = "35640714-89aec83ac50fbde9100978e6e";
+// API_KEY = "35640714-89aec83ac50fbde9100978e6e";
 
 const form = document.querySelector('#search-form');
 const gallery = document.querySelector('.gallery');
