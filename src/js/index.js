@@ -3,8 +3,6 @@ import Notiflix from 'notiflix';
 import { fetchImages } from './fetchImg';
 import { renderGallery, clearGallery } from './renderGallery';
 
-
-
 Notiflix.Notify.init({
   position: 'right-top',
   distance: '10px',
