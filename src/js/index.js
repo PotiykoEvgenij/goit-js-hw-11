@@ -59,12 +59,3 @@ async function handleLoadMore() {
         console.error(error);
     }
 };
-
-const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-    navText: ['←', '→'],
-    overlayOpacity: 0.9,
-    animationSpeed: 200,
-    doubleTapZoom: 1.5,
-});
