@@ -20,6 +20,7 @@ let currentPage = 1;
 let searchQuery = "";
 
 form.addEventListener('submit', handleFormSubmit);
+window.addEventListener('scroll', handleScroll);
 loadMoreBtn.addEventListener('click', handleLoadMore);
 
 async function handleFormSubmit(event) {
@@ -42,6 +43,13 @@ async function handleFormSubmit(event) {
         console.error(error);
     }
 };
+
+async function handleScroll() {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight - 10) {
+        loadMoreBtn.click();
+    }
+}
 
 async function handleLoadMore() {
     loadMoreBtn.classList.add('hidden-button');
