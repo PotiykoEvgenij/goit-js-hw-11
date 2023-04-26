@@ -52,14 +52,6 @@ async function handleFormSubmit(event) {
     }
 };
 
-// async function handleScroll() {
-//     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-//     if (scrollTop + clientHeight >= scrollHeight - 10) {
-//         loadMoreBtn.click();
-//         return;
-//     }
-// }
-
 async function handleLoadMore() {
     isLoading = true;
     loadMoreBtn.classList.add('hidden-button');
