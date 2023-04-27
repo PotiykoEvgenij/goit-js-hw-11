@@ -34,7 +34,8 @@ async function handleFormSubmit(event) {
         clearGallery(gallery);
         loadMoreBtn.classList.add('hidden-button');
         return;
-    } else {
+        } else {
+            isLoading = true;
         try {
             const { hits, totalHits } = await fetchImages(searchQuery, currentPage);
             if (hits.length === 0) {
@@ -47,7 +48,9 @@ async function handleFormSubmit(event) {
             Notiflix.Notify.info(`Hooray! We found ${totalHits} images.`);
         } catch (error) {
             console.error(error);
-        }
+        } finally {
+        isLoading = false;
+    }
     }
 };
 
