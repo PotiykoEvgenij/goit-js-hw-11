@@ -5,7 +5,7 @@ const gallery = document.querySelector('.gallery');
 
 let galleryCards = [];
 
-export const renderGallery = (images) => {
+export const renderGallery = (images, currentPage) => {
 
   images.forEach((image) => {
     const galleryCard = `
@@ -32,6 +32,8 @@ export const renderGallery = (images) => {
   });
   gallery.innerHTML = galleryCards.join('');
 
+  scrollGallery(currentPage);
+
   const lightbox = new SimpleLightbox(".gallery a", {
     captionsData: "alt",
     captionDelay: 250,
@@ -46,4 +48,19 @@ export const renderGallery = (images) => {
 export const clearGallery = () => {
   gallery.innerHTML = "";
   galleryCards = []
+};
+
+function scrollGallery(currentPage) {
+  console.log(currentPage);
+  if (currentPage === 1) {
+    return;
+  } else {
+    const { height: cardHeight } = document
+      .querySelector(".gallery")
+      .firstElementChild.getBoundingClientRect();
+    window.scrollBy({
+      top: cardHeight * 2,
+      behavior: "smooth",
+    });      
+  }
 };

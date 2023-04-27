@@ -43,7 +43,8 @@ async function handleFormSubmit(event) {
                 loadMoreBtn.classList.add('hidden-button');
                 return;
             }
-            renderGallery(hits);
+            renderGallery(hits, currentPage);
+            console.log(currentPage);
             loadMoreBtn.classList.remove('hidden-button');
             Notiflix.Notify.info(`Hooray! We found ${totalHits} images.`);
         } catch (error) {
@@ -64,7 +65,7 @@ async function handleLoadMore() {
             loadMoreBtn.classList.add('hidden-button');
             return;
         }
-        renderGallery(hits);
+        renderGallery(hits, currentPage);
         loadMoreBtn.classList.remove('hidden-button');
     } catch (error) {
         console.error(error);
