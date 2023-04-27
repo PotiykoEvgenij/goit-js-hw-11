@@ -30,7 +30,8 @@ async function handleFormSubmit(event) {
     searchQuery = event.target.elements.searchQuery.value.trim();
     currentPage = 1;
     clearGallery(gallery);
-        if (searchQuery === "") {
+    if (searchQuery === "") {
+        isLoading = true;
         clearGallery(gallery);
         loadMoreBtn.classList.add('hidden-button');
         return;
