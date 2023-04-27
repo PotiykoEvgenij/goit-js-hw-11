@@ -30,8 +30,7 @@ async function handleFormSubmit(event) {
     searchQuery = event.target.elements.searchQuery.value.trim();
     currentPage = 1;
     clearGallery(gallery);
-    console.log(searchQuery !== "")
-    if (searchQuery === "") {
+        if (searchQuery === "") {
         clearGallery(gallery);
         loadMoreBtn.classList.add('hidden-button');
         return;
@@ -44,7 +43,6 @@ async function handleFormSubmit(event) {
                 return;
             }
             renderGallery(hits, currentPage);
-            console.log(currentPage);
             loadMoreBtn.classList.remove('hidden-button');
             Notiflix.Notify.info(`Hooray! We found ${totalHits} images.`);
         } catch (error) {

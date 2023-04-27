@@ -51,7 +51,6 @@ export const clearGallery = () => {
 };
 
 function scrollGallery(currentPage) {
-  console.log(currentPage);
   if (currentPage === 1) {
     return;
   } else {
